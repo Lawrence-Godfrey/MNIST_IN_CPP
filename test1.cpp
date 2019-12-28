@@ -97,6 +97,60 @@ int main()
 
     movieRatings.push_back({13,14,15,16});
 
+    // converting types
+    int total_amount {100};
+    int total_number {8};
+    double average {0.0};
+    average = total_amount/total_number;  //12.5 becomes 12
+
+    average = static_cast<double>(total_amount)/total_number; // average is 12.5.    static_cast better than (double), does more checks. 
+
+    // initializing multiple vars
+    int num1 {}, num2 {}, num3 {};
+
+
+    //Equality and Bool
+    bool check {false};
+
+    cout<<boolalpha; //booleans will be diplayed as true/false, not 1/0
+
+    check = (10==10);
+
+    //switch statement 
+    int selection {0};
+    
+    switch (selection)  
+    {   
+        case '0':                             // case 0 and 1 go to same statement
+        case '1': selection =2; break;        // cases must be literals/constants 
+        case '2': selection =3; break;
+        case '3': 
+        {
+            int new_select {};                // since we're declaring a variable, need {}
+            new_select = 3;
+        }
+        default: selection = 4;               //default is optional
+
+    }
+
+    //Conditional Operator 
+    //(conditional_expression) ? expression_1 : expression_2 
+    int a {1}, b {2};
+    
+    int result = (a<b) ? a:b;   //result = a
+
+    cout << endl << ( (result>1) ? "More than 1" : "Less than 1") << endl; //prints "less than 1"
+
+    //Loops 
+    //For loop
+    // for (initialization ; condition ; increment)
+
+    for(int i {5}, j {5} ; i<=5 ; ++i, ++j)
+    {
+        j*=i;
+    }
+
+
 
     return 0;
 }
